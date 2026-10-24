@@ -22,10 +22,17 @@ Website Portfolio được xây dựng theo phong cách tối giản, hiện đ�
 
 ```text
 Portfolio/
-├── index.html                # Trang web chính (HTML5 + Bootstrap 5.3 + Dark/Light Theme)
-├── favicon.svg               # Icon hiển thị trên tab trình duyệt (Quân Tốt độc bản)
-├── developer-workspace.svg   # Đồ họa minh họa không gian lập trình viên chuẩn Mệnh Thổ
-└── README.md                 # Tài liệu giới thiệu dự án
+├── index.html                # Trang web chính (HTML5 + Bootstrap 5.3 CDN)
+├── README.md                 # Tài liệu giới thiệu dự án
+├── .gitignore                # Ẩn file nháp & cấu hình môi trường
+└── assets/
+    ├── css/
+    │   └── style.css         # Bảng định dạng CSS phong thủy Mệnh Thổ & Dark/Light mode
+    ├── js/
+    │   └── main.js           # Logic chuyển đổi giao diện Dark/Light mode & tương tác
+    └── images/
+        ├── favicon.svg       # Biểu tượng tab trình duyệt (Quân Tốt độc bản)
+        └── developer-workspace.svg # Đồ họa minh họa không gian lập trình viên chuẩn Mệnh Thổ
 ```
 
 ---

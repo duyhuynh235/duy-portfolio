@@ -17,3 +17,8 @@ icon-preview.html
 favicon-hybrid.svg
 favicon-monogram.svg
 favicon-pawn.svg
+
+# Redundant root copies (now moved to /assets)
+/style.css
+/main.js
+/developer-workspace.svg

@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Huỳnh Nhật Duy | Java Backend Developer</title>
     
-    <!-- ================= FAVICON CHÍNH THỨC (QUÂN TỐT ĐỘC BẢN) ================= -->
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="alternate icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="alternate icon" type="image/svg+xml" href="assets/images/favicon.svg">
 
     <!-- Meta SEO -->
     <meta name="description" content="Portfolio của Huỳnh Nhật Duy - Sinh viên Software Engineering tại FPT University, định hướng Java Backend Developer (Java, Spring Boot, MySQL, Thymeleaf).">
@@ -21,431 +20,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <style>
-        /* ================= BẢNG MÀU PHONG THỦY MỆNH THỔ & HỖ TRỢ DARK / LIGHT =================
-           - Tương sinh (Hỏa sinh Thổ): Cam đất, Hổ phách, Đỏ đất ấm (#ea580c, #f97316, #d97706)
-           - Bản mệnh (Thổ): Nâu ấm, Vàng đất, Xám đá trầm (#1c1917, #78350f, #292524)
-           - TUYỆT ĐỐI TRÁNH: Màu xanh lá cây (Mộc khắc Thổ)
-        ======================================================================================== */
-        
-        /* Chế độ nền tối (Dark Mode - Mặc định) */
-        [data-bs-theme="dark"] {
-            --bg-page: #0f0e0d;              /* Đen than ấm trầm (Stone 950) */
-            --bg-card: #1c1917;              /* Stone 900 */
-            --bg-card-subtle: #292524;       /* Stone 800 */
-            --border-color: #383431;         /* Viền xám đá ấm */
-            --text-main: #f5f5f4;            /* Chữ trắng ngà */
-            --text-muted: #a8a29e;           /* Chữ xám phụ */
-            --primary-accent: #f97316;       /* Cam hổ phách sáng */
-            --primary-hover: #ea580c;
-            --badge-bg: rgba(249, 115, 22, 0.12);
-            --badge-border: rgba(249, 115, 22, 0.35);
-            --badge-text: #fdba74;
-            --feature-box-bg: #161412;
-            --feature-box-border: #2e2a27;
-        }
-
-        /* Chế độ nền sáng (Light Mode) */
-        [data-bs-theme="light"] {
-            --bg-page: #fafaf9;              /* Trắng ngà be cát */
-            --bg-card: #ffffff;              /* Trắng sạch */
-            --bg-card-subtle: #f5f5f4;       /* Stone 100 */
-            --border-color: #e7e5e4;         /* Stone 200 */
-            --text-main: #1c1917;            /* Nâu than đậm */
-            --text-muted: #57534e;           /* Xám nâu nhã */
-            --primary-accent: #c2410c;       /* Cam đất trầm */
-            --primary-hover: #9a3412;
-            --badge-bg: #fff7ed;
-            --badge-border: #fed7aa;
-            --badge-text: #9a3412;
-            --feature-box-bg: #fbfbf9;
-            --feature-box-border: #e7e5e4;
-        }
-
-        body {
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            color: var(--text-main);
-            background-color: var(--bg-page);
-            transition: background-color 0.25s ease, color 0.25s ease;
-            line-height: 1.6;
-            scroll-behavior: smooth;
-        }
-
-        code, .font-mono {
-            font-family: 'JetBrains Mono', monospace;
-        }
-
-        /* Navbar */
-        .navbar {
-            backdrop-filter: blur(12px);
-            background-color: rgba(15, 14, 13, 0.85);
-            border-bottom: 1px solid var(--border-color);
-            transition: all 0.3s ease;
-        }
-        [data-bs-theme="light"] .navbar {
-            background-color: rgba(250, 250, 249, 0.9);
-        }
-        .navbar-brand {
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            color: var(--text-main);
-        }
-        .navbar-brand span {
-            color: var(--primary-accent);
-        }
-        .nav-link {
-            font-weight: 500;
-            color: var(--text-muted);
-            margin: 0 8px;
-            font-size: 0.92rem;
-            transition: color 0.2s;
-        }
-        .nav-link:hover, .nav-link.active {
-            color: var(--primary-accent) !important;
-        }
-
-        /* Nút đổi Theme Dark / Light */
-        .theme-toggle-btn {
-            background-color: var(--bg-card-subtle);
-            border: 1px solid var(--border-color);
-            color: var(--text-main);
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-        .theme-toggle-btn:hover {
-            border-color: var(--primary-accent);
-            color: var(--primary-accent);
-            transform: scale(1.05);
-        }
-
-        /* Hero */
-        .hero-section {
-            padding: 130px 0 80px 0;
-            border-bottom: 1px solid var(--border-color);
-        }
-        .hero-title {
-            font-weight: 800;
-            letter-spacing: -1.2px;
-            line-height: 1.15;
-        }
-        .hero-title span {
-            color: var(--primary-accent);
-        }
-
-        /* Badges */
-        .tech-pill {
-            background-color: var(--bg-card-subtle);
-            color: var(--text-main);
-            font-size: 0.82rem;
-            font-weight: 500;
-            padding: 5px 12px;
-            border-radius: 6px;
-            border: 1px solid var(--border-color);
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-        .tech-pill-accent {
-            background-color: var(--badge-bg);
-            color: var(--badge-text);
-            border-color: var(--badge-border);
-            font-weight: 600;
-        }
-
-        /* Cards */
-        .card-custom {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 14px;
-            transition: transform 0.2s ease, border-color 0.2s ease;
-        }
-        .card-custom:hover {
-            border-color: var(--primary-accent);
-        }
-
-        /* Skills Cards (Tối giản chỉ ghi tên) */
-        .skill-card-simple {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 14px;
-            padding: 24px 20px;
-            text-align: center;
-            transition: transform 0.2s ease, border-color 0.2s ease;
-        }
-        .skill-card-simple:hover {
-            transform: translateY(-3px);
-            border-color: var(--primary-accent);
-        }
-        .skill-icon-wrap {
-            font-size: 2.2rem;
-            color: var(--primary-accent);
-            margin-bottom: 12px;
-            display: inline-block;
-        }
-
-        /* Section Headings */
-        .section-label {
-            color: var(--primary-accent);
-            font-weight: 700;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-family: 'JetBrains Mono', monospace;
-        }
-        .section-title {
-            font-weight: 800;
-            letter-spacing: -0.8px;
-            color: var(--text-main);
-        }
-
-        /* ================= BỐ CỤC DỰ ÁN MỚI (PROJECT WORKBENCH) ================= */
-        .project-workbench-card {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 18px;
-            padding: 32px;
-            transition: border-color 0.25s ease, box-shadow 0.25s ease;
-            position: relative;
-        }
-        .project-workbench-card:hover {
-            border-color: var(--primary-accent);
-            box-shadow: 0 14px 34px rgba(0, 0, 0, 0.12);
-        }
-        .project-tag-strip {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 16px;
-        }
-        .project-number {
-            font-family: 'JetBrains Mono', monospace;
-            font-weight: 800;
-            font-size: 1.1rem;
-            color: var(--primary-accent);
-        }
-
-        /* Khối Minh Họa Kiến Trúc & Dữ Liệu (Thay thế hoàn toàn ảnh terminal) */
-        .feature-architecture-box {
-            background-color: var(--feature-box-bg);
-            border: 1px solid var(--feature-box-border);
-            border-radius: 14px;
-            padding: 22px;
-            transition: all 0.2s ease;
-        }
-        .feature-tree-view {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 12px 14px;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.78rem;
-            line-height: 1.6;
-        }
-
-        /* Timeline Milestone (Cột mốc học vấn) */
-        .milestone-timeline {
-            position: relative;
-            padding-left: 32px;
-        }
-        .milestone-timeline::before {
-            content: '';
-            position: absolute;
-            left: 7px;
-            top: 10px;
-            bottom: 10px;
-            width: 2px;
-            background-color: var(--border-color);
-        }
-        .milestone-item {
-            position: relative;
-            margin-bottom: 32px;
-        }
-        .milestone-item:last-child {
-            margin-bottom: 0;
-        }
-        .milestone-dot {
-            position: absolute;
-            left: -32px;
-            top: 4px;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background-color: var(--bg-page);
-            border: 3px solid var(--primary-accent);
-        }
-        .milestone-year {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.8rem;
-            font-weight: 700;
-            color: var(--primary-accent);
-            margin-bottom: 4px;
-        }
-
-        /* Contact Box 1-chạm */
-        .contact-link-box {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 18px 20px;
-            text-decoration: none;
-            color: var(--text-main);
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            transition: all 0.2s ease;
-        }
-        .contact-link-box:hover {
-            border-color: var(--primary-accent);
-            transform: translateY(-2px);
-            color: var(--primary-accent);
-        }
-        .contact-icon-wrap {
-            width: 44px;
-            height: 44px;
-            border-radius: 10px;
-            background-color: var(--badge-bg);
-            color: var(--primary-accent);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.25rem;
-            flex-shrink: 0;
-            border: 1px solid var(--badge-border);
-        }
-
-        /* Buttons */
-        .btn-earth-primary {
-            background-color: var(--primary-accent);
-            color: #ffffff;
-            border: 1px solid var(--primary-accent);
-            font-weight: 600;
-            border-radius: 50rem;
-            padding: 8px 22px;
-            transition: all 0.2s ease;
-        }
-        .btn-earth-primary:hover {
-            background-color: var(--primary-hover);
-            color: #ffffff;
-            border-color: var(--primary-hover);
-        }
-        .btn-earth-outline {
-            background-color: transparent;
-            color: var(--text-main);
-            border: 1px solid var(--border-color);
-            font-weight: 600;
-            border-radius: 50rem;
-            padding: 8px 22px;
-            transition: all 0.2s ease;
-        }
-        .btn-earth-outline:hover {
-            border-color: var(--primary-accent);
-            color: var(--primary-accent);
-        }
-
-        /* ================= TỔNG QUAN DỰ ÁN TRỰC QUAN (NON-CODE VISUAL PREVIEW) ================= */
-        .project-preview-box {
-            background-color: var(--feature-box-bg);
-            border: 1px solid var(--feature-box-border);
-            border-radius: 14px;
-            padding: 22px;
-        }
-        .preview-window-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-bottom: 12px;
-            margin-bottom: 14px;
-            border-bottom: 1px solid var(--border-color);
-        }
-        .mini-browser-bar {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 50rem;
-            padding: 6px 14px;
-            font-size: 0.78rem;
-            color: var(--text-muted);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 14px;
-        }
-        .mini-showcase-item {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 12px 14px;
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            margin-bottom: 14px;
-        }
-        .mini-book-cover {
-            width: 44px;
-            height: 56px;
-            background: linear-gradient(135deg, var(--primary-accent), #9a3412);
-            color: #ffffff;
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.4rem;
-            flex-shrink: 0;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-        }
-        .mini-chess-board-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            width: 140px;
-            height: 140px;
-            border: 2px solid var(--border-color);
-            border-radius: 8px;
-            overflow: hidden;
-            margin: 0 auto 14px auto;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-        }
-        .mini-chess-cell {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.35rem;
-            user-select: none;
-        }
-        .cell-light {
-            background-color: #fafaf9;
-            color: #1c1917;
-        }
-        .cell-dark {
-            background-color: #d6d3d1;
-            color: #1c1917;
-        }
-        [data-bs-theme="dark"] .cell-light {
-            background-color: #3f3a36;
-            color: #f5f5f4;
-        }
-        [data-bs-theme="dark"] .cell-dark {
-            background-color: #24211e;
-            color: #f5f5f4;
-        }
-        .cell-active {
-            background-color: rgba(249, 115, 22, 0.4) !important;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--bg-card);
-            border-top: 1px solid var(--border-color);
-            padding: 40px 0 30px 0;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-        }
-    </style>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body data-bs-spy="scroll" data-bs-target="#mainNavbar" data-bs-offset="100">
 
@@ -453,12 +29,10 @@
     <nav id="mainNavbar" class="navbar navbar-expand-lg fixed-top py-2">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center gap-2" href="#">
-                <!-- Biểu tượng Quân Tốt Cờ Vua cạnh tên (Phong cách độc bản, tượng trưng cho nỗ lực vươn lên) -->
                 <span style="font-size: 1.35rem; color: var(--primary-accent); line-height: 1;">♟</span>
                 <span style="font-family: 'JetBrains Mono', monospace; font-size: 1.1rem; font-weight: 800;">HUYNH NHAT DUY</span>
             </a>
 
-            <!-- Toggle Theme Button on Mobile & Desktop -->
             <div class="d-flex align-items-center gap-2 order-lg-last ms-auto me-2 me-lg-0">
                 <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()" title="Chuyển chế độ Nền tối / Nền sáng">
                     <i class="bi bi-sun-fill text-warning" id="themeIcon"></i>
@@ -495,7 +69,6 @@
                         Tôi là sinh viên Kỹ thuật Phần mềm tại <strong>Đại học FPT</strong>. Thay vì học dàn trải, tôi chọn đi sâu vào bản chất của <strong>Java Backend</strong> — nơi tôi được tự tay thiết kế luồng dữ liệu phân tầng, kiểm soát tính toàn vẹn của hệ thống và giải quyết các bài toán logic từ cơ sở dữ liệu đến màn hình người dùng.
                     </p>
 
-                    <!-- Tech Badges Tập Trung Các Món Cốt Lõi -->
                     <div class="d-flex flex-wrap gap-2 mb-4">
                         <span class="tech-pill tech-pill-accent"><i class="bi bi-cup-hot-fill"></i> Java</span>
                         <span class="tech-pill tech-pill-accent"><i class="bi bi-gear-fill"></i> Spring Boot</span>
@@ -504,7 +77,6 @@
                         <span class="tech-pill"><i class="bi bi-git"></i> Git</span>
                     </div>
 
-                    <!-- Action Buttons -->
                     <div class="d-flex flex-wrap gap-3">
                         <a href="#projects" class="btn btn-earth-primary">
                             <i class="bi bi-folder2-open me-1"></i> Xem Dự Án
@@ -518,7 +90,6 @@
                     </div>
                 </div>
 
-                <!-- Profile Code Block -->
                 <div class="col-lg-5">
                     <div class="card-custom p-4 shadow-sm border">
                         <div class="d-flex justify-content-between align-items-center pb-2 mb-3 border-bottom border-secondary border-opacity-25">
@@ -561,7 +132,7 @@
 
                 <div class="col-lg-6">
                     <div class="card-custom p-3 p-md-4 text-center border shadow-sm">
-                        <img src="developer-workspace.svg" alt="Không gian lập trình Java Backend & Pawn ♟" class="img-fluid" style="max-height: 340px; width: 100%; object-fit: contain;">
+                        <img src="assets/images/developer-workspace.svg" alt="Không gian lập trình Java Backend & Pawn ♟" class="img-fluid" style="max-height: 340px; width: 100%; object-fit: contain;">
                     </div>
                 </div>
             </div>
@@ -578,7 +149,6 @@
             </div>
 
             <div class="row g-3">
-                <!-- 1. JAVA -->
                 <div class="col-6 col-md-3">
                     <div class="skill-card-simple h-100">
                         <div class="skill-icon-wrap">
@@ -589,7 +159,6 @@
                     </div>
                 </div>
 
-                <!-- 2. SPRING BOOT -->
                 <div class="col-6 col-md-3">
                     <div class="skill-card-simple h-100">
                         <div class="skill-icon-wrap">
@@ -600,7 +169,6 @@
                     </div>
                 </div>
 
-                <!-- 3. BOOTSTRAP / UI -->
                 <div class="col-6 col-md-3">
                     <div class="skill-card-simple h-100">
                         <div class="skill-icon-wrap">
@@ -611,7 +179,6 @@
                     </div>
                 </div>
 
-                <!-- 4. SQL -->
                 <div class="col-6 col-md-3">
                     <div class="skill-card-simple h-100">
                         <div class="skill-icon-wrap">
@@ -625,7 +192,7 @@
         </div>
     </section>
 
-    <!-- ================= FEATURED PROJECTS (CẬP NHẬT CÔNG NGHỆ CHUẨN GITHUB & KHỐI MINH HỌA MỚI) ================= -->
+    <!-- ================= FEATURED PROJECTS ================= -->
     <section id="projects" class="py-5">
         <div class="container py-3">
             <div class="mb-4">
@@ -638,10 +205,8 @@
 
             <div class="d-flex flex-column gap-4">
 
-                <!-- DỰ ÁN 01: AureliaBooks (SWP391 - Công nghệ chuẩn repo GitHub) -->
                 <div class="project-workbench-card">
                     <div class="row g-4 align-items-center">
-                        <!-- Cột thông tin bài toán & thông số -->
                         <div class="col-lg-6">
                             <div class="project-tag-strip">
                                 <span class="project-number">01</span>
@@ -657,7 +222,6 @@
                                 Trong dự án nhóm này, tôi phụ trách phân hệ <strong>Dữ liệu chủ & Quản lý sản phẩm</strong>. Nhiệm vụ chính là xây dựng luồng nghiệp vụ phân tầng, tổ chức cây danh mục phân cấp cha - con và bảo vệ tính toàn vẹn quan hệ cơ sở dữ liệu (chặn xóa NXB/Thương hiệu có sản phẩm liên kết).
                             </p>
 
-                            <!-- Bảng thông số kỹ thuật chuẩn mã nguồn GitHub -->
                             <div class="row g-3 mb-4">
                                 <div class="col-sm-4">
                                     <small class="text-muted d-block font-mono" style="font-size: 0.72rem;">VAI TRÒ</small>
@@ -673,7 +237,6 @@
                                 </div>
                             </div>
 
-                            <!-- Tech pills chuẩn xác từ pom.xml và source code -->
                             <div class="d-flex flex-wrap gap-1 mb-4">
                                 <span class="tech-pill tech-pill-accent">Java 21</span>
                                 <span class="tech-pill tech-pill-accent">Spring Boot 3.5</span>
@@ -692,7 +255,6 @@
                             </div>
                         </div>
 
-                        <!-- Cột Phải: Tổng Quan Giao Diện & Trực Quan Sản Phẩm (Không nói về code) -->
                         <div class="col-lg-6">
                             <div class="project-preview-box">
                                 <div class="preview-window-header">
@@ -703,13 +265,11 @@
                                     <span class="badge" style="background-color: var(--badge-bg); color: var(--badge-text);">Tổng Quan Sản Phẩm</span>
                                 </div>
                                 
-                                <!-- Thanh tìm kiếm trực quan -->
                                 <div class="mini-browser-bar">
                                     <i class="bi bi-search" style="color: var(--primary-accent);"></i>
                                     <span>Tìm kiếm sách giáo khoa, truyện tranh, bút ký...</span>
                                 </div>
 
-                                <!-- Mô phỏng thẻ sản phẩm trưng bày -->
                                 <div class="mini-showcase-item">
                                     <div class="mini-book-cover">
                                         <i class="bi bi-book-half"></i>
@@ -724,7 +284,6 @@
                                     </div>
                                 </div>
 
-                                <!-- 3 Điểm tổng quan nghiệp vụ phục vụ người dùng -->
                                 <div class="d-flex flex-column gap-2 small">
                                     <div class="d-flex align-items-center gap-2">
                                         <i class="bi bi-check2-circle" style="color: var(--primary-accent);"></i>
@@ -744,10 +303,8 @@
                     </div>
                 </div>
 
-                <!-- DỰ ÁN 02: Desktop Chess Game (JavaFX) -->
                 <div class="project-workbench-card">
                     <div class="row g-4 align-items-center">
-                        <!-- Cột thông tin bài toán & thông số -->
                         <div class="col-lg-6">
                             <div class="project-tag-strip">
                                 <span class="project-number">02</span>
@@ -763,7 +320,6 @@
                                 Dự án cá nhân rèn luyện tư duy lập trình hướng đối tượng thuần túy. Xây dựng logic bàn cờ và thuật toán xác thực nước đi hợp lệ cho từng quân cờ theo chuẩn quy tắc cờ vua quốc tế, tách biệt hoàn toàn giữa giao diện hiển thị JavaFX và bộ xử lý trạng thái ván đấu.
                             </p>
 
-                            <!-- Bảng thông số kỹ thuật tối giản -->
                             <div class="row g-3 mb-4">
                                 <div class="col-sm-4">
                                     <small class="text-muted d-block font-mono" style="font-size: 0.72rem;">VAI TRÒ</small>
@@ -779,7 +335,6 @@
                                 </div>
                             </div>
 
-                            <!-- Tech pills -->
                             <div class="d-flex flex-wrap gap-1 mb-4">
                                 <span class="tech-pill tech-pill-accent">Java Core</span>
                                 <span class="tech-pill tech-pill-accent">JavaFX</span>
@@ -796,7 +351,6 @@
                             </div>
                         </div>
 
-                        <!-- Cột Phải: Tổng Quan Bàn Cờ & Trải Nghiệm Trò Chơi (Không nói về code) -->
                         <div class="col-lg-6">
                             <div class="project-preview-box">
                                 <div class="preview-window-header">
@@ -807,13 +361,11 @@
                                     <span class="badge" style="background-color: var(--badge-bg); color: var(--badge-text);">Ván Đấu Trực Quan</span>
                                 </div>
 
-                                <!-- Trạng thái ván đấu trực quan -->
                                 <div class="d-flex justify-content-between align-items-center small mb-2 px-1">
                                     <span class="text-secondary" style="font-size: 0.75rem;"><i class="bi bi-people-fill me-1"></i>Trận đấu: Trắng vs Đen</span>
                                     <span class="fw-semibold" style="color: var(--primary-accent); font-size: 0.75rem;">Lượt đi: Quân Trắng</span>
                                 </div>
 
-                                <!-- Bàn cờ trực quan thu nhỏ -->
                                 <div class="mini-chess-board-grid">
                                     <div class="mini-chess-cell cell-light">♜</div>
                                     <div class="mini-chess-cell cell-dark">♞</div>
@@ -836,7 +388,6 @@
                                     <div class="mini-chess-cell cell-light">♔</div>
                                 </div>
 
-                                <!-- 3 Điểm tổng quan trải nghiệm người chơi -->
                                 <div class="d-flex flex-column gap-2 small">
                                     <div class="d-flex align-items-center gap-2">
                                         <i class="bi bi-check2-circle" style="color: var(--primary-accent);"></i>
@@ -870,7 +421,6 @@
             </div>
 
             <div class="row g-4">
-                <!-- Cột Trái: Học Vấn Chính Quy -->
                 <div class="col-lg-6">
                     <div class="card-custom p-4 p-md-4 h-100">
                         <div class="d-flex align-items-center gap-2 mb-4 pb-2 border-bottom border-secondary border-opacity-25">
@@ -879,7 +429,6 @@
                         </div>
 
                         <div class="milestone-timeline">
-                            <!-- Cột mốc 1: Đại học FPT -->
                             <div class="milestone-item">
                                 <div class="milestone-dot"></div>
                                 <div class="milestone-year">2024 – HIỆN TẠI</div>
@@ -897,7 +446,6 @@
                                 </div>
                             </div>
 
-                            <!-- Cột mốc 2: Tốt nghiệp THPT -->
                             <div class="milestone-item">
                                 <div class="milestone-dot"></div>
                                 <div class="milestone-year">2021 – 2024</div>
@@ -911,7 +459,6 @@
                     </div>
                 </div>
 
-                <!-- Cột Phải: Chứng Chỉ Chuyên Môn -->
                 <div class="col-lg-6">
                     <div class="card-custom p-4 p-md-4 h-100">
                         <div class="d-flex align-items-center gap-2 mb-4 pb-2 border-bottom border-secondary border-opacity-25">
@@ -920,7 +467,6 @@
                         </div>
 
                         <div class="milestone-timeline">
-                            <!-- Chứng chỉ 1: HKUST -->
                             <div class="milestone-item">
                                 <div class="milestone-dot"></div>
                                 <div class="milestone-year">HOÀN THÀNH 04/2026</div>
@@ -932,7 +478,6 @@
                                 </div>
                             </div>
 
-                            <!-- Chứng chỉ 2: University of Michigan -->
                             <div class="milestone-item">
                                 <div class="milestone-dot"></div>
                                 <div class="milestone-year">HOÀN THÀNH 11/2025</div>
@@ -960,8 +505,7 @@
             </div>
 
             <div class="row g-3 justify-content-center">
-                <!-- Email trực tiếp -->
-                <div class="col-md-6 col-lg-4">
+                <div class="col-md-4">
                     <a href="mailto:duyhuynh.dev@gmail.com" class="contact-link-box h-100">
                         <div class="contact-icon-wrap">
                             <i class="bi bi-envelope-fill"></i>
@@ -973,8 +517,7 @@
                     </a>
                 </div>
 
-                <!-- Số điện thoại trực tiếp -->
-                <div class="col-md-6 col-lg-4">
+                <div class="col-md-4">
                     <a href="tel:0901234567" class="contact-link-box h-100">
                         <div class="contact-icon-wrap">
                             <i class="bi bi-telephone-fill"></i>
@@ -986,8 +529,7 @@
                     </a>
                 </div>
 
-                <!-- GitHub -->
-                <div class="col-md-6 col-lg-4">
+                <div class="col-md-4">
                     <a href="https://github.com/duyhuynh235" target="_blank" class="contact-link-box h-100">
                         <div class="contact-icon-wrap">
                             <i class="bi bi-github"></i>
@@ -997,19 +539,6 @@
                             <span class="fw-bold font-mono small">github.com/duyhuynh235</span>
                         </div>
                     </a>
-                </div>
-
-                <!-- Địa điểm -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="contact-link-box h-100">
-                        <div class="contact-icon-wrap">
-                            <i class="bi bi-geo-alt-fill"></i>
-                        </div>
-                        <div>
-                            <small class="text-muted d-block" style="font-size: 0.72rem;">KHU VỰC LÀM VIỆC</small>
-                            <span class="fw-bold small">TP. Hồ Chí Minh, Việt Nam</span>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -1029,32 +558,7 @@
     <!-- Bootstrap 5.3 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Theme Switch Script (Dark / Light) -->
-    <script>
-        function toggleTheme() {
-            const currentTheme = document.documentElement.getAttribute('data-bs-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            document.documentElement.setAttribute('data-bs-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            updateThemeIcon(newTheme);
-        }
-
-        function updateThemeIcon(theme) {
-            const icon = document.getElementById('themeIcon');
-            if (icon) {
-                if (theme === 'dark') {
-                    icon.className = 'bi bi-sun-fill text-warning';
-                } else {
-                    icon.className = 'bi bi-moon-stars-fill text-secondary';
-                }
-            }
-        }
-
-        const savedTheme = localStorage.getItem('theme') || 'dark';
-        document.documentElement.setAttribute('data-bs-theme', savedTheme);
-        document.addEventListener('DOMContentLoaded', () => {
-            updateThemeIcon(savedTheme);
-        });
-    </script>
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
 </body>
 </html>

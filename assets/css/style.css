@@ -1,0 +1,422 @@
+/* ================= BẢNG MÀU PHONG THỦY MỆNH THỔ & HỖ TRỢ DARK / LIGHT =================
+   - Tương sinh (Hỏa sinh Thổ): Cam đất, Hổ phách, Đỏ đất ấm (#ea580c, #f97316, #d97706)
+   - Bản mệnh (Thổ): Nâu ấm, Vàng đất, Xám đá trầm (#1c1917, #78350f, #292524)
+   - TUYỆT ĐỐI TRÁNH: Màu xanh lá cây (Mộc khắc Thổ)
+======================================================================================== */
+
+/* Chế độ nền tối (Dark Mode - Mặc định) */
+[data-bs-theme="dark"] {
+    --bg-page: #0f0e0d;              /* Đen than ấm trầm (Stone 950) */
+    --bg-card: #1c1917;              /* Stone 900 */
+    --bg-card-subtle: #292524;       /* Stone 800 */
+    --border-color: #383431;         /* Viền xám đá ấm */
+    --text-main: #f5f5f4;            /* Chữ trắng ngà */
+    --text-muted: #a8a29e;           /* Chữ xám phụ */
+    --primary-accent: #f97316;       /* Cam hổ phách sáng */
+    --primary-hover: #ea580c;
+    --badge-bg: rgba(249, 115, 22, 0.12);
+    --badge-border: rgba(249, 115, 22, 0.35);
+    --badge-text: #fdba74;
+    --feature-box-bg: #161412;
+    --feature-box-border: #2e2a27;
+}
+
+/* Chế độ nền sáng (Light Mode) */
+[data-bs-theme="light"] {
+    --bg-page: #fafaf9;              /* Trắng ngà be cát */
+    --bg-card: #ffffff;              /* Trắng sạch */
+    --bg-card-subtle: #f5f5f4;       /* Stone 100 */
+    --border-color: #e7e5e4;         /* Stone 200 */
+    --text-main: #1c1917;            /* Nâu than đậm */
+    --text-muted: #57534e;           /* Xám nâu nhã */
+    --primary-accent: #c2410c;       /* Cam đất trầm */
+    --primary-hover: #9a3412;
+    --badge-bg: #fff7ed;
+    --badge-border: #fed7aa;
+    --badge-text: #9a3412;
+    --feature-box-bg: #fbfbf9;
+    --feature-box-border: #e7e5e4;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: var(--text-main);
+    background-color: var(--bg-page);
+    transition: background-color 0.25s ease, color 0.25s ease;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+code, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+/* Navbar */
+.navbar {
+    backdrop-filter: blur(12px);
+    background-color: rgba(15, 14, 13, 0.85);
+    border-bottom: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+[data-bs-theme="light"] .navbar {
+    background-color: rgba(250, 250, 249, 0.9);
+}
+.navbar-brand {
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: var(--text-main);
+}
+.navbar-brand span {
+    color: var(--primary-accent);
+}
+.nav-link {
+    font-weight: 500;
+    color: var(--text-muted);
+    margin: 0 8px;
+    font-size: 0.92rem;
+    transition: color 0.2s;
+}
+.nav-link:hover, .nav-link.active {
+    color: var(--primary-accent) !important;
+}
+
+/* Nút đổi Theme Dark / Light */
+.theme-toggle-btn {
+    background-color: var(--bg-card-subtle);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.theme-toggle-btn:hover {
+    border-color: var(--primary-accent);
+    color: var(--primary-accent);
+    transform: scale(1.05);
+}
+
+/* Hero */
+.hero-section {
+    padding: 130px 0 80px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+.hero-title {
+    font-weight: 800;
+    letter-spacing: -1.2px;
+    line-height: 1.15;
+}
+.hero-title span {
+    color: var(--primary-accent);
+}
+
+/* Badges */
+.tech-pill {
+    background-color: var(--bg-card-subtle);
+    color: var(--text-main);
+    font-size: 0.82rem;
+    font-weight: 500;
+    padding: 5px 12px;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+.tech-pill-accent {
+    background-color: var(--badge-bg);
+    color: var(--badge-text);
+    border-color: var(--badge-border);
+    font-weight: 600;
+}
+
+/* Cards */
+.card-custom {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.card-custom:hover {
+    border-color: var(--primary-accent);
+}
+
+/* Skills Cards (Tối giản chỉ ghi tên) */
+.skill-card-simple {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 24px 20px;
+    text-align: center;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.skill-card-simple:hover {
+    transform: translateY(-3px);
+    border-color: var(--primary-accent);
+}
+.skill-icon-wrap {
+    font-size: 2.2rem;
+    color: var(--primary-accent);
+    margin-bottom: 12px;
+    display: inline-block;
+}
+
+/* Section Headings */
+.section-label {
+    color: var(--primary-accent);
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-family: 'JetBrains Mono', monospace;
+}
+.section-title {
+    font-weight: 800;
+    letter-spacing: -0.8px;
+    color: var(--text-main);
+}
+
+/* Project Workbench */
+.project-workbench-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    padding: 32px;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    position: relative;
+}
+.project-workbench-card:hover {
+    border-color: var(--primary-accent);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.12);
+}
+.project-tag-strip {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+.project-number {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: var(--primary-accent);
+}
+
+/* Khối Minh Họa Kiến Trúc & Dữ Liệu */
+.feature-architecture-box {
+    background-color: var(--feature-box-bg);
+    border: 1px solid var(--feature-box-border);
+    border-radius: 14px;
+    padding: 22px;
+    transition: all 0.2s ease;
+}
+.feature-tree-view {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    line-height: 1.6;
+}
+
+/* Timeline Milestone */
+.milestone-timeline {
+    position: relative;
+    padding-left: 32px;
+}
+.milestone-timeline::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 10px;
+    bottom: 10px;
+    width: 2px;
+    background-color: var(--border-color);
+}
+.milestone-item {
+    position: relative;
+    margin-bottom: 32px;
+}
+.milestone-item:last-child {
+    margin-bottom: 0;
+}
+.milestone-dot {
+    position: absolute;
+    left: -32px;
+    top: 4px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: var(--bg-page);
+    border: 3px solid var(--primary-accent);
+}
+.milestone-year {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--primary-accent);
+    margin-bottom: 4px;
+}
+
+/* Contact Box 1-chạm */
+.contact-link-box {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 18px 20px;
+    text-decoration: none;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: all 0.2s ease;
+}
+.contact-link-box:hover {
+    border-color: var(--primary-accent);
+    transform: translateY(-2px);
+    color: var(--primary-accent);
+}
+.contact-icon-wrap {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background-color: var(--badge-bg);
+    color: var(--primary-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+    border: 1px solid var(--badge-border);
+}
+
+/* Buttons */
+.btn-earth-primary {
+    background-color: var(--primary-accent);
+    color: #ffffff;
+    border: 1px solid var(--primary-accent);
+    font-weight: 600;
+    border-radius: 50rem;
+    padding: 8px 22px;
+    transition: all 0.2s ease;
+}
+.btn-earth-primary:hover {
+    background-color: var(--primary-hover);
+    color: #ffffff;
+    border-color: var(--primary-hover);
+}
+.btn-earth-outline {
+    background-color: transparent;
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    font-weight: 600;
+    border-radius: 50rem;
+    padding: 8px 22px;
+    transition: all 0.2s ease;
+}
+.btn-earth-outline:hover {
+    border-color: var(--primary-accent);
+    color: var(--primary-accent);
+}
+
+/* Preview Box */
+.project-preview-box {
+    background-color: var(--feature-box-bg);
+    border: 1px solid var(--feature-box-border);
+    border-radius: 14px;
+    padding: 22px;
+}
+.preview-window-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 12px;
+    margin-bottom: 14px;
+    border-bottom: 1px solid var(--border-color);
+}
+.mini-browser-bar {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 50rem;
+    padding: 6px 14px;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+.mini-showcase-item {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 12px 14px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 14px;
+}
+.mini-book-cover {
+    width: 44px;
+    height: 56px;
+    background: linear-gradient(135deg, var(--primary-accent), #9a3412);
+    color: #ffffff;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+.mini-chess-board-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 140px;
+    height: 140px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 0 auto 14px auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.mini-chess-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.35rem;
+    user-select: none;
+}
+.cell-light {
+    background-color: #fafaf9;
+    color: #1c1917;
+}
+.cell-dark {
+    background-color: #d6d3d1;
+    color: #1c1917;
+}
+[data-bs-theme="dark"] .cell-light {
+    background-color: #3f3a36;
+    color: #f5f5f4;
+}
+[data-bs-theme="dark"] .cell-dark {
+    background-color: #24211e;
+    color: #f5f5f4;
+}
+.cell-active {
+    background-color: rgba(249, 115, 22, 0.4) !important;
+}
+
+/* Footer */
+footer {
+    background-color: var(--bg-card);
+    border-top: 1px solid var(--border-color);
+    padding: 40px 0 30px 0;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
