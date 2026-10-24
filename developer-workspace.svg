@@ -1,0 +1,216 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 380" width="100%" height="100%">
+  <defs>
+    <!-- Warm Earth/Terracotta Gradients -->
+    <radialGradient id="ambientGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ea580c" stop-opacity="0.18" />
+      <stop offset="60%" stop-color="#c2410c" stop-opacity="0.06" />
+      <stop offset="100%" stop-color="#c2410c" stop-opacity="0" />
+    </radialGradient>
+
+    <linearGradient id="screenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1c1917" />
+      <stop offset="100%" stop-color="#0f0e0d" />
+    </linearGradient>
+
+    <linearGradient id="laptopBezel" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#44403c" />
+      <stop offset="100%" stop-color="#292524" />
+    </linearGradient>
+
+    <linearGradient id="laptopBaseGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#78716c" />
+      <stop offset="30%" stop-color="#57534e" />
+      <stop offset="100%" stop-color="#292524" />
+    </linearGradient>
+
+    <linearGradient id="deskGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#292524" />
+      <stop offset="50%" stop-color="#44403c" />
+      <stop offset="100%" stop-color="#292524" />
+    </linearGradient>
+
+    <linearGradient id="terracottaCup" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ea580c" />
+      <stop offset="100%" stop-color="#9a3412" />
+    </linearGradient>
+
+    <linearGradient id="pawnGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f97316" />
+      <stop offset="60%" stop-color="#c2410c" />
+      <stop offset="100%" stop-color="#7c2d12" />
+    </linearGradient>
+
+    <linearGradient id="cardBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#292524" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#1c1917" stop-opacity="0.95" />
+    </linearGradient>
+
+    <!-- Soft Drop Shadow Filter -->
+    <filter id="softShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#000000" flood-opacity="0.35" />
+    </filter>
+
+    <filter id="glowOrange" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Ambient Glow Behind Desk -->
+  <circle cx="280" cy="200" r="190" fill="url(#ambientGlow)" />
+
+  <!-- Subtle Floating Decorative Code Symbols -->
+  <g opacity="0.25" font-family="'JetBrains Mono', monospace" font-size="13" fill="#ea580c">
+    <text x="50" y="80">&lt;backend&gt;</text>
+    <text x="440" y="70">{ flow: "data" }</text>
+    <text x="60" y="240">// Java 21</text>
+    <text x="460" y="220">@Service</text>
+  </g>
+
+  <!-- Floating Upper Badge 1: Spring Boot & Tiered Flow (Top Left) -->
+  <g filter="url(#softShadow)" transform="translate(60, 100)">
+    <rect width="140" height="42" rx="10" fill="url(#cardBg)" stroke="#ea580c" stroke-width="1.2" stroke-opacity="0.6" />
+    <circle cx="20" cy="21" r="5" fill="#f97316" filter="url(#glowOrange)" />
+    <text x="34" y="19" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="700" fill="#fafaf9">SPRING BOOT</text>
+    <text x="34" y="32" font-family="'JetBrains Mono', monospace" font-size="9" fill="#ea580c">Layered System</text>
+  </g>
+
+  <!-- Floating Upper Badge 2: Java Backend Engine (Top Right) -->
+  <g filter="url(#softShadow)" transform="translate(360, 95)">
+    <rect width="145" height="42" rx="10" fill="url(#cardBg)" stroke="#f59e0b" stroke-width="1.2" stroke-opacity="0.5" />
+    <!-- Mini database/server icon -->
+    <rect x="14" y="14" width="14" height="4" rx="2" fill="#f59e0b" />
+    <rect x="14" y="20" width="14" height="4" rx="2" fill="#ea580c" />
+    <rect x="14" y="26" width="14" height="4" rx="2" fill="#c2410c" />
+    <text x="36" y="20" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="700" fill="#fafaf9">JAVA BACKEND</text>
+    <text x="36" y="32" font-family="'JetBrains Mono', monospace" font-size="9" fill="#f59e0b">Data Integrity</text>
+  </g>
+
+  <!-- Modern Wooden/Stone Desk -->
+  <g filter="url(#softShadow)">
+    <!-- Desk Surface Top Lip -->
+    <rect x="35" y="295" width="490" height="12" rx="6" fill="url(#deskGrad)" stroke="#57534e" stroke-width="0.8" />
+    <!-- Desk Front Bevel -->
+    <rect x="45" y="306" width="470" height="6" rx="2" fill="#1c1917" opacity="0.8" />
+  </g>
+
+  <!-- ================= THE LAPTOP (CENTER) ================= -->
+  <g filter="url(#softShadow)">
+    <!-- Laptop Base (Bottom chassis) -->
+    <path d="M 175 285 L 385 285 L 398 296 L 162 296 Z" fill="url(#laptopBaseGrad)" stroke="#78716c" stroke-width="0.6" />
+    <!-- Trackpad -->
+    <rect x="255" y="287" width="50" height="7" rx="1.5" fill="#44403c" opacity="0.8" />
+    <!-- Front edge notch -->
+    <rect x="270" y="295" width="20" height="1.5" rx="0.75" fill="#1c1917" />
+
+    <!-- Screen Bezel Outer Shell -->
+    <rect x="188" y="120" width="184" height="165" rx="8" fill="url(#laptopBezel)" stroke="#57534e" stroke-width="0.8" />
+
+    <!-- Screen Display Area -->
+    <rect x="194" y="126" width="172" height="152" rx="4" fill="url(#screenGrad)" />
+
+    <!-- Screen Header Bar (Window controls) -->
+    <rect x="194" y="126" width="172" height="18" rx="4" fill="#24211e" />
+    <!-- 3 Window dots (Terracotta & Amber accents) -->
+    <circle cx="204" cy="135" r="3" fill="#ea580c" />
+    <circle cx="213" cy="135" r="3" fill="#f59e0b" />
+    <circle cx="222" cy="135" r="3" fill="#78716c" />
+    <text x="245" y="139" font-family="'JetBrains Mono', monospace" font-size="8" fill="#a8a29e">AppController.java</text>
+
+    <!-- Code Editor Content Inside Laptop -->
+    <g font-family="'JetBrains Mono', monospace" font-size="8.5" xml:space="preserve">
+      <!-- Line 1: Annotation -->
+      <text x="204" y="159" fill="#ea580c" font-weight="600">@RestController</text>
+      <!-- Line 2: Class declaration -->
+      <text x="204" y="173">
+        <tspan fill="#f59e0b">public class </tspan><tspan fill="#fafaf9">ServiceApi {</tspan>
+      </text>
+      <!-- Line 3: Autowired / Injected -->
+      <text x="214" y="188">
+        <tspan fill="#78716c">@Autowired</tspan>
+      </text>
+      <!-- Line 4: Service reference -->
+      <text x="214" y="202">
+        <tspan fill="#ea580c">private </tspan><tspan fill="#fafaf9">FlowService svc;</tspan>
+      </text>
+      <!-- Line 5: Mapping -->
+      <text x="214" y="218">
+        <tspan fill="#f59e0b">@GetMapping</tspan><tspan fill="#d6d3d1">("/status")</tspan>
+      </text>
+      <!-- Line 6: Method -->
+      <text x="214" y="233">
+        <tspan fill="#fafaf9">public ResponseDTO </tspan><tspan fill="#f97316">run</tspan><tspan fill="#fafaf9">() {</tspan>
+      </text>
+      <!-- Line 7: Return flow -->
+      <text x="224" y="248">
+        <tspan fill="#ea580c">return </tspan><tspan fill="#fafaf9">svc.process();</tspan>
+      </text>
+      <!-- Line 8: Closing bracket with active cursor -->
+      <text x="214" y="262" fill="#fafaf9">}</text>
+      <!-- Active Orange Cursor -->
+      <rect x="222" y="253" width="5" height="10" fill="#f97316">
+        <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite" />
+      </rect>
+    </g>
+  </g>
+
+  <!-- ================= TRADEMARK PAWN PIECE (LEFT OF LAPTOP) ================= -->
+  <!-- Personal Brand Pawn ♟ Figurine on the desk -->
+  <g filter="url(#softShadow)" transform="translate(108, 205)">
+    <!-- Base shadow -->
+    <ellipse cx="22" cy="90" rx="20" ry="4" fill="#0c0a09" opacity="0.6" />
+
+    <!-- Tiered Base Plate -->
+    <path d="M 4 88 C 4 84, 40 84, 40 88 L 38 91 C 38 93, 6 93, 6 91 Z" fill="url(#pawnGrad)" stroke="#ea580c" stroke-width="0.5" />
+    <ellipse cx="22" cy="85" rx="15" ry="3" fill="#ea580c" opacity="0.9" />
+
+    <!-- Pedestal / Lower flare -->
+    <path d="M 11 84 Q 14 74 16 68 L 28 68 Q 30 74 33 84 Z" fill="url(#pawnGrad)" stroke="#ea580c" stroke-width="0.4" />
+
+    <!-- Waist Ring Collar -->
+    <ellipse cx="22" cy="67" rx="9" ry="2.5" fill="#f59e0b" />
+
+    <!-- Stem / Neck -->
+    <path d="M 17 66 Q 16 52 18 42 L 26 42 Q 28 52 27 66 Z" fill="url(#pawnGrad)" />
+
+    <!-- Upper Collar Ring -->
+    <ellipse cx="22" cy="41" rx="10" ry="3" fill="#f59e0b" />
+
+    <!-- Pawn Crown Head (Spherical ball) -->
+    <circle cx="22" cy="26" r="13" fill="url(#pawnGrad)" stroke="#f97316" stroke-width="0.6" />
+    <!-- Sphere Highlight reflection -->
+    <circle cx="18" cy="22" r="4" fill="#ffffff" opacity="0.4" />
+    
+    <!-- Mini label below pawn -->
+    <text x="22" y="103" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="700" fill="#ea580c">PAWN ♟</text>
+  </g>
+
+  <!-- ================= STEAMING COFFEE MUG (RIGHT OF LAPTOP) ================= -->
+  <g filter="url(#softShadow)" transform="translate(412, 230)">
+    <!-- Coffee Mug Shadow -->
+    <ellipse cx="24" cy="66" rx="20" ry="4" fill="#0c0a09" opacity="0.6" />
+
+    <!-- Mug Handle -->
+    <path d="M 36 28 C 50 28, 50 52, 36 52" fill="none" stroke="url(#terracottaCup)" stroke-width="5" stroke-linecap="round" />
+
+    <!-- Mug Body -->
+    <rect x="10" y="20" width="30" height="42" rx="4" fill="url(#terracottaCup)" stroke="#f97316" stroke-width="0.6" />
+
+    <!-- Coffee Liquid Surface inside mug lip -->
+    <ellipse cx="25" cy="20" rx="15" ry="4" fill="#431407" />
+    <ellipse cx="25" cy="20" rx="12" ry="2.5" fill="#78350f" opacity="0.8" />
+
+    <!-- Rising Steam Curves (Warm animated feel) -->
+    <g opacity="0.65" stroke="#f97316" stroke-width="1.8" fill="none" stroke-linecap="round">
+      <path d="M 21 12 Q 17 2 22 -8 Q 26 -18 21 -26" />
+      <path d="M 29 10 Q 33 0 28 -10 Q 24 -20 29 -28" />
+    </g>
+  </g>
+
+  <!-- Small Notebook / Tech Notepad in front left -->
+  <g filter="url(#softShadow)" transform="translate(135, 290)">
+    <!-- Small tech pad lying flat -->
+    <polygon points="0,5 35,5 30,12 -5,12" fill="#292524" stroke="#57534e" stroke-width="0.5" />
+    <line x1="5" y1="8" x2="25" y2="8" stroke="#ea580c" stroke-width="1" />
+  </g>
+</svg>
