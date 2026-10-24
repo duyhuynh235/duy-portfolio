@@ -8,31 +8,30 @@
 
 ---
 
-## 📌 Tổng Quan
+## 📌 Giới Thiệu
 
-Website Portfolio được xây dựng theo phong cách tối giản, hiện đại và chuẩn mực:
-* **Màu sắc phong thủy (Mệnh Thổ):** Sử dụng các gam màu đất ấm áp (Terracotta `#c2410c`, Amber `#f59e0b`, Stone/Charcoal `#1c1917`), tuyệt đối không dùng sắc xanh lá.
-* **Hỗ trợ Giao diện Sáng / Tối (Dark & Light Mode):** Tự động lưu trạng thái lựa chọn vào `localStorage`.
-* **Trọng tâm kỹ thuật:** Tập trung chuyên sâu vào **Java**, **Spring Boot**, **Bootstrap**, **SQL** và kiến trúc phân tầng dữ liệu rành mạch.
-* **Biểu tượng thương hiệu:** Quân Tốt cờ vua (**Pawn ♟**) — biểu trưng cho sự tiến bước kiên định, vững vàng từ nền móng.
+* **Họ và tên:** Huỳnh Nhật Duy
+* **Chuyên ngành:** Kỹ thuật Phần mềm (Software Engineering) — Đại học FPT
+* **Định hướng:** Java Backend Developer
+* **Công nghệ trọng tâm:** Java, Spring Boot, MySQL, Thymeleaf, Bootstrap
 
 ---
 
-## 📂 Cấu Trúc Dự Án
+## 📂 Cấu Trúc Thư Mục
 
 ```text
 Portfolio/
-├── index.html                # Trang web chính (HTML5 + Bootstrap 5.3 CDN)
-├── README.md                 # Tài liệu giới thiệu dự án
-├── .gitignore                # Ẩn file nháp & cấu hình môi trường
+├── index.html
+├── README.md
+├── .gitignore
 └── assets/
     ├── css/
-    │   └── style.css         # Bảng định dạng CSS phong thủy Mệnh Thổ & Dark/Light mode
+    │   └── style.css
     ├── js/
-    │   └── main.js           # Logic chuyển đổi giao diện Dark/Light mode & tương tác
+    │   └── main.js
     └── images/
-        ├── favicon.svg       # Biểu tượng tab trình duyệt (Quân Tốt độc bản)
-        └── developer-workspace.svg # Đồ họa minh họa không gian lập trình viên chuẩn Mệnh Thổ
+        ├── favicon.svg
+        └── developer-workspace.svg
 ```
 
 ---
@@ -41,22 +40,15 @@ Portfolio/
 
 * **Giao diện & Bố cục:** HTML5, CSS3, Bootstrap 5.3 CDN, Bootstrap Icons
 * **Kiểu chữ & Đồ họa:** Google Fonts (Inter, JetBrains Mono), Vector SVG
-* **Logic tương tác:** Vanilla JavaScript (Chuyển đổi theme, điều hướng mượt mà)
-
----
-
-## 🚀 Hướng Dẫn Xem Trực Tiếp Trên Máy (Local)
-
-Chỉ cần click đúp chuột vào file `index.html` để mở ngay trên bất kỳ trình duyệt nào (Chrome, Edge, Firefox, Brave) mà không cần cài đặt môi trường hay Node.js.
+* **Tương tác:** JavaScript (Dark / Light Theme Toggle, localStorage)
 
 ---
 
 ## 📬 Liên Hệ
 
-* **Họ và tên:** Huỳnh Nhật Duy
 * **Email:** [duyhuynh.dev@gmail.com](mailto:duyhuynh.dev@gmail.com)
 * **GitHub:** [github.com/duyhuynh235](https://github.com/duyhuynh235)
-* **Số điện thoại:** 0939 167 360
+* **Số điện thoại:** (+84) 901 234 567
 
 ---
 *© 2026 Huỳnh Nhật Duy. All rights reserved.*
