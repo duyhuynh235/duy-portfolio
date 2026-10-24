@@ -2,7 +2,7 @@
 
 > Portfolio cá nhân giới thiệu năng lực kỹ thuật, tư duy kiến trúc hệ thống và các dự án thực tế trong hệ sinh thái **Java & Spring Boot**.
 
-[![GitHub](https://img.shields.io/badge/GitHub-duy--huynh--dev-181717?style=flat&logo=github)](https://github.com/duy-huynh-dev)
+[![GitHub](https://img.shields.io/badge/GitHub-duyhuynh235-181717?style=flat&logo=github)](https://github.com/duyhuynh235)
 [![FPT University](https://img.shields.io/badge/FPT_University-Software_Engineering-f97316?style=flat)](https://fpt.edu.vn)
 [![Tech Stack](https://img.shields.io/badge/Stack-Java_21_|_Spring_Boot_3.5_|_MySQL-c2410c?style=flat)]()
 
@@ -48,7 +48,7 @@ Chỉ cần click đúp chuột vào file `index.html` để mở ngay trên b�
 
 * **Họ và tên:** Huỳnh Nhật Duy
 * **Email:** [duyhuynh.dev@gmail.com](mailto:duyhuynh.dev@gmail.com)
-* **GitHub:** [github.com/duy-huynh-dev](https://github.com/duy-huynh-dev)
+* **GitHub:** [github.com/duyhuynh235](https://github.com/duyhuynh235)
 * **Số điện thoại:** 0939 167 360
 
 ---
