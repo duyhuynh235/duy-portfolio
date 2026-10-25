@@ -46,9 +46,8 @@ Portfolio/
 
 ## 📬 Liên Hệ
 
-* **Email:** [duyhuynh.dev@gmail.com](mailto:duyhuynh.dev@gmail.com)
+* **Email:** [duyhnce201224@gmail.com](mailto:duyhnce201224@gmail.com)
 * **GitHub:** [github.com/duyhuynh235](https://github.com/duyhuynh235)
-* **Số điện thoại:** (+84) 901 234 567
 
 ---
 *© 2026 Huỳnh Nhật Duy. All rights reserved.*
